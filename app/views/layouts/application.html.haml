@@ -7,6 +7,10 @@
     = csrf_meta_tags
 
   %body
+    %nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          %a.navbar-brand{ href: root_path } Requisitions
     .container{ role: 'main'}
       = yield
 
