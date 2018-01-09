@@ -1,1 +1,10 @@
-hello_world
+.row
+  .col-md-offset-1.col-md-10
+    .jumbotron
+      %h1.display-4 Requisition
+      %p.lead
+        The best place for getting the requisition that you need.
+      %hr.my-4
+        Join us for getting a lot of benefits
+      %p.lead
+        = link_to 'Facebook login', user_facebook_omniauth_authorize_path, class: 'btn btn-primary btn-large'

@@ -26,6 +26,7 @@ gem 'haml-rails', '~> 1.0'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'interactor', '~> 3.0'
+gem 'simple_form'
 
 
 group :development, :test do

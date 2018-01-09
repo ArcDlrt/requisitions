@@ -12,6 +12,10 @@
         .navbar-header
           %a.navbar-brand{ href: root_path } Requisitions
     .container{ role: 'main'}
+      - if notice.present?
+        %p.notice= notice
+      - if alert.present?
+        %p.alert= alert
       = yield
 
       =content_for :javascript_onbody
