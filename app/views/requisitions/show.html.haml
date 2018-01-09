@@ -1,0 +1,17 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title= "Requisition #{ @requisition.id }"
+  .panel-body
+    .panel
+
+      - @requisition.attributes.except('id', 'user_id', 'created_at', 'updated_at').each do |k,v|
+        .row
+          .col-md-4
+            = t("activerecord.attributes.requisition.#{k}")
+          .col-md-8
+            = ['income', 'requested_amount'].include?(k) ? number_to_currency(v) : v
+      .row
+        .col-md-4
+          = link_to 'Modify', edit_requisition_path(id: @requisition.id), class: 'btn btn-default btn-large'
+        .col-md-4
+          = link_to 'Back', requisitions_path, class: 'btn btn-default btn-large'

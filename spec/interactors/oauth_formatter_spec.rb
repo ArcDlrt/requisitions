@@ -1,18 +1,10 @@
 require 'rails_helper'
+require_relative '../../spec/support/omniauth_fake_responses'
 
 RSpec.describe OauthFormatter do
   context 'call' do
-    let(:omniauth_response) {
-      {
-        "provider" => "Facebook",
-        "uid" => "msda90jmoifsadf",
-        "info" =>  {
-          "email" => "test@requisitions.com",
-          "first_name" => "Homero",
-          "last_name" => "Simpson"
-        }
-      }
-    }
+
+    let(:omniauth_response) { OmniauthFakeResponses::all_data }
 
     it "returns an error if field <data> isn't received" do
       action = OauthFormatter.call

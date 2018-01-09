@@ -1,14 +1,15 @@
 %h2 Profile
 .row
-  = simple_form_for @profile, url: profiles_path, method: :post do |f|
-    = f.input :first_name, input_html: { value: session['profile_data']['first_name'] }
-    = f.input :second_name
-    = f.input :first_last_name, input_html: { value: session['profile_data']['last_name'] }
-    = f.input :second_last_name
-    = f.input :gender, collection: genders_list, prompt: 'Select an option'
-    = f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 18
-    = f.input :curp
-    = f.input :rfc
-    = f.input :birth_state, collection: t('states'), prompt: 'Select an option'
-    = f.input :phone_number
-    = f.submit 'Save',  class: 'btn btn-default btn-large'
+  .col-md-8
+    = simple_form_for @profile, url: profiles_path, method: :post do |f|
+      = f.input :first_name, input_html: { value: session['profile_data']['first_name'] }
+      = f.input :second_name
+      = f.input :first_last_name, input_html: { value: session['profile_data']['last_name'] }
+      = f.input :second_last_name
+      = f.input :gender, collection: genders_list, prompt: 'Select an option'
+      = f.input :birth_date, start_year: Date.today.year - 90, end_year: Date.today.year - 18
+      = f.input :curp
+      = f.input :rfc
+      = f.input :birth_state, collection: t('states'), prompt: 'Select an option'
+      = f.input :phone_number
+      = f.submit 'Save',  class: 'btn btn-default btn-large'

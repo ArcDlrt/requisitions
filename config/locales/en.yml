@@ -1,8 +1,17 @@
-
 en:
   genders:
     female: 'Female'
     male: 'Male'
+  marital_status_list:
+    - Single
+    - Married
+    - Divorced
+    - Widow
+  payment_terms_list:
+    - 6
+    - 12
+    - 24
+    - 36
   states:
     - Aguascalientes
     - Baja California
@@ -36,3 +45,12 @@ en:
     - Veracruz
     - Yucatan
     - Zacatecas
+
+  activerecord:
+    attributes:
+      requisition:
+        address_years: "Years in current address"
+        company_years: "Years in the company"
+        has_sgmm: "Have SGMM"
+        has_imss: "Have IMSS"
+        has_car: "Have Car"

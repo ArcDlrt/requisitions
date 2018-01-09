@@ -2,6 +2,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
     data = OauthFormatter.call(data: request.env['omniauth.auth'])
+
+    unless data.success?
+      flash[:error] = "Something went wrong"
+      redirect_to root_path
+      return
+    end
+
     session['profile_data'] = data.profile_data
 
     @user = User.from_omniauth(data.user_data)

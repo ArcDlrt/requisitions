@@ -1,0 +1,22 @@
+%h2 Requisitions
+
+.row
+  .col-md-4
+    = link_to 'New requisition', new_requisition_path, class: 'btn btn-primary btn-large'
+%table.table
+  %thead
+    %th °N
+    %th Requested amount
+    %th Payment terms
+    %th Bank
+    %th Actions
+  %tbody
+    - @requisitions.each do |requisition|
+      %tr
+        %td= requisition.id
+        %td= number_to_currency(requisition.requested_amount)
+        %td= requisition.payment_terms
+        %td= requisition.bank
+        %td
+          = link_to 'View', requisition_path(id: requisition.id)
+          = link_to 'Modify', edit_requisition_path(id: requisition.id)
