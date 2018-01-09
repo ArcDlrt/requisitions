@@ -23,6 +23,10 @@ gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'haml-rails', '~> 1.0'
 
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'interactor', '~> 3.0'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -33,6 +37,8 @@ group :development, :test do
 
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+
+  gem 'dotenv-rails'
 end
 
 group :development do
