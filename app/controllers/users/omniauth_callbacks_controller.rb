@@ -25,4 +25,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def failure
     redirect_to root_path
   end
+
+  protected
+
+  def after_sign_in_path_for(resource)
+    if resource.profile
+      requisitions_path
+    else
+      new_profile_path
+    end
+  end
 end
