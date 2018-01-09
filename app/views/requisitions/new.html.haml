@@ -1,0 +1,6 @@
+%h2 New requisition
+.row
+  .col-md-8
+    = simple_form_for @requisition, url: requisitions_path, method: :post do |f|
+      = render partial: 'form', locals: { f: f }
+      = f.submit 'Generate requisition', class: 'btn btn-default btn-large'

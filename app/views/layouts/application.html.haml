@@ -10,8 +10,14 @@
     %nav.navbar.navbar-inverse.navbar-fixed-top
       .container
         .navbar-header
-          %a.navbar-brand{ href: root_path } Requisitions
+          %a.navbar-brand{ href: link_for_navbar } Requisitions
+        %ul.nav.navbar-nav.navbar-right
+          %li= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-large'
     .container{ role: 'main'}
+      - if notice.present?
+        %p.notice= notice
+      - if alert.present?
+        %p.alert= alert
       = yield
 
-      =content_for :javascript_onbody
+      = content_for :javascript_onbody

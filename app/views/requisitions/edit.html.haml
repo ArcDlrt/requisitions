@@ -1,0 +1,6 @@
+%h2 Modify requisition
+.row
+  .col-md-8
+    = simple_form_for @requisition, url: requisition_path, method: :put do |f|
+      = render partial: 'form', locals: { f: f }
+      = f.submit 'Save changes', class: 'btn btn-default btn-large'
