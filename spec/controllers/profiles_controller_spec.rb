@@ -15,7 +15,6 @@ RSpec.describe ProfilesController, type: :controller do
       get :new
 
       expect(response).to have_http_status(:success)
-      binding.pry
     end
 
     after(:each) do
